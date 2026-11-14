@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4H3FCHGR4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N4H3FCHGR4');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Deskora | Our Story &amp; Workspace Mission</title>
+  <meta name="description" content="Learn about Deskora and our mission to help Indian students and professionals create organised, functional, and aesthetic workspaces." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#24443B" />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Single Shared Stylesheet -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. REUSABLE HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header">
+    <!-- Announcement Bar - continuous ticker -->
+    <div class="announcement-bar" role="banner" aria-label="Site announcement">
+      <div class="announcement-track">
+        <p class="announcement-text">&#127381;&nbsp;&nbsp;<strong>Special Workspace Deal</strong>&nbsp;&nbsp;&#8231;&nbsp;&nbsp;Limited Time Offer&nbsp;&nbsp;&#8231;&nbsp;&nbsp;Upgrade Your Workspace &mdash; Flat 15% OFF All Desk Essentials!&nbsp;&nbsp;&#127381;</p>
+        <p class="announcement-text" aria-hidden="true">&#127381;&nbsp;&nbsp;<strong>Special Workspace Deal</strong>&nbsp;&nbsp;&#8231;&nbsp;&nbsp;Limited Time Offer&nbsp;&nbsp;&#8231;&nbsp;&nbsp;Upgrade Your Workspace &mdash; Flat 15% OFF All Desk Essentials!&nbsp;&nbsp;&#127381;</p>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="nav-wrapper">
+      <div class="container header-inner">
+        
+                <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Deskora Homepage">
+          <img src="assets/logo.jpg" alt="Deskora Logo" class="brand-logo-img" width="44" height="44" />
+          <span class="brand-text-wrap">
+            <span class="brand-name">Deskora</span>
+            <span class="brand-sub">Workspace Essentials</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="desktop-nav" aria-label="Desktop Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="shop.html" class="nav-link">Shop All</a></li>
+            <li><a href="desk-organisers.html" class="nav-link">Desk Organisers</a></li>
+            <li><a href="laptop-and-mobile-stands.html" class="nav-link">Stands</a></li>
+            <li><a href="desk-mats-and-mousepads.html" class="nav-link">Desk Mats</a></li>
+            <li><a href="about-us.html" class="nav-link nav-link-active" aria-current="page">About</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Actions: Cart Button & Mobile Menu Toggle -->
+        <div class="header-actions">
+          <!-- Cart Toggle Button with Counter Badge -->
+          <button 
+            type="button" 
+            class="cart-toggle-btn" 
+            id="cart-toggle-btn" 
+            aria-label="Open Shopping Cart" 
+            aria-expanded="false" 
+            aria-controls="cart-drawer">
+            <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="cart-btn-label">Cart</span>
+            <span class="cart-count-badge" id="cart-count-badge" aria-live="polite">0</span>
+          </button>
+          
+          <!-- Mobile Menu Button (Hamburger) -->
+          <button 
+            type="button" 
+            class="mobile-menu-btn" 
+            id="mobile-menu-btn" 
+            aria-label="Toggle navigation menu" 
+            aria-expanded="false" 
+            aria-controls="mobile-nav">
+            <span class="menu-icon-bar" aria-hidden="true"></span>
+            <span class="menu-icon-bar" aria-hidden="true"></span>
+            <span class="menu-icon-bar" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="shop.html" class="mobile-nav-link">Shop All Products</a></li>
+        <li><a href="desk-organisers.html" class="mobile-nav-link">Desk Organisers</a></li>
+        <li><a href="laptop-and-mobile-stands.html" class="mobile-nav-link">Laptop &amp; Mobile Stands</a></li>
+        <li><a href="desk-mats-and-mousepads.html" class="mobile-nav-link">Desk Mats &amp; Mousepads</a></li>
+        <li><a href="about-us.html" class="mobile-nav-link mobile-nav-link-active" aria-current="page">About Deskora</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact &amp; Support</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <a href="shop.html" class="btn btn-primary">Browse All Products</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       CART DRAWER (SLIDE-OUT PANEL)
+       ========================================================================= -->
+  <div class="cart-backdrop" id="cart-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div id="cart-drawer-title" class="cart-drawer-title">Your Cart</div>
+      <button type="button" class="cart-close-btn" id="cart-close-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-items-container">
+      <p class="cart-empty-message">Your cart is currently empty. Explore our desk essentials to get started.</p>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal:</span>
+        <span class="cart-subtotal-price" id="cart-subtotal-price">₹0</span>
+      </div>
+      <p class="cart-tax-notice">Standard pan-India delivery. Taxes calculated at checkout.</p>
+      <button type="button" class="btn btn-primary cart-checkout-btn" id="cart-checkout-btn">Proceed to Checkout</button>
+      <div class="checkout-status-notice" id="checkout-status-notice" role="status" aria-live="polite"></div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT: ABOUT DESKORA
+       ========================================================================= -->
+  <main id="main-content" class="about-page-main">
+
+    <!-- Breadcrumb & Header -->
+    <section class="page-header-section" aria-labelledby="about-page-title">
+      <div class="container">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol class="breadcrumb-list">
+            <li><a href="index.html">Home</a></li>
+            <li aria-hidden="true">&rsaquo;</li>
+            <li aria-current="page">About Deskora</li>
+          </ol>
+        </nav>
+        <p class="section-tagline">Our Story &amp; Purpose</p>
+        <h1 id="about-page-title" class="page-title">Designed for Calm, Focused Productivity</h1>
+        <p class="page-intro-text">
+          Deskora is an Indian e-commerce brand committed to helping students, young professionals, and remote workers create functional and aesthetic workspaces. We believe an orderly desk encourages clear thinking and better daily focus.
+        </p>
+      </div>
+    </section>
+
+    <!-- Narrative Story Section with Image Split -->
+    <section class="about-story-section" aria-labelledby="story-heading">
+      <div class="container about-grid">
+        <div class="about-content">
+          <h2 id="story-heading" class="section-title">Why We Started Deskora</h2>
+          <p>
+            The idea behind Deskora began with a simple observation: millions of Indian students, MBA aspirants, and remote workers spend upwards of 8 to 12 hours a day seated at their desks, yet most workspaces are cluttered, uncomfortable, and uninspiring.
+          </p>
+          <p>
+            Laptops resting flat on tables force users into poor, hunched postures that cause chronic neck and shoulder fatigue. Tangled charging wires, scattered stationery, and scratched table surfaces create ongoing subconscious friction.
+          </p>
+          <p>
+            We created Deskora to offer thoughtfully curated, premium-grade desk accessories tailored specifically for modern Indian setups. From durable aircraft-grade aluminum laptop stands to dual-sided vegan leather desk blotters, every product is selected for daily durability, ergonomic comfort, and clean visual design.
+          </p>
+        </div>
+        <div class="about-image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&amp;auto=format&amp;fit=crop&amp;q=80" 
+            alt="Warm and minimalist home office desk setup with natural sunlight and organised essentials"
+            class="about-image"
+            width="800"
+            height="600"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Values & Core Pillars -->
+    <section class="about-values-section" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tagline">Guiding Principles</p>
+          <h2 id="values-heading" class="section-title">What Defines Every Deskora Product</h2>
+          <p class="section-description">
+            Our design philosophy prioritises everyday comfort, honest material construction, and straightforward customer service.
+          </p>
+        </div>
+
+        <div class="guide-pillars-grid">
+          
+          <div class="guide-pillar-card">
+            <h3 class="pillar-title">1. Practical Ergonomics</h3>
+            <p class="pillar-text">
+              We design and curate risers, docks, and wrist rests that encourage neutral posture, alleviate spinal pressure, and keep devices properly ventilated during marathon work sessions.
+            </p>
+          </div>
+
+          <div class="guide-pillar-card">
+            <h3 class="pillar-title">2. Honest, Durable Materials</h3>
+            <p class="pillar-text">
+              We insist on genuine aviation-grade aluminum alloys, sustainable Moso bamboo, and heavy-duty bio-based vegan leather. No cheap, flimsy plastics that sag or break after a month.
+            </p>
+          </div>
+
+          <div class="guide-pillar-card">
+            <h3 class="pillar-title">3. Calming Visual Aesthetics</h3>
+            <p class="pillar-text">
+              Visual clutter leads to mental fatigue. Our neutral palette of deep greens, warm terracotta accents, and soft beige tones elevates your workspace into a calm, focused sanctuary.
+            </p>
+          </div>
+
+          <div class="guide-pillar-card">
+            <h3 class="pillar-title">4. Pan-India Fulfillment</h3>
+            <p class="pillar-text">
+              With operational fulfillment hubs in Bengaluru and Gurugram, we dispatch orders swiftly across India, ensuring dependable packaging and responsive customer assistance.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOUNDER SECTION — The Face Behind Deskora
+         ========================================================= -->
+    <section class="founder-section" aria-labelledby="founder-heading">
+      <div class="container founder-grid">
+
+        <!-- Founder Logo / Badge -->
+        <div class="founder-visual">
+          <div class="founder-logo-wrap">
+            <img src="assets/logo.jpg" alt="Deskora — Workspace Essentials logo" class="founder-logo-img" width="200" height="200" />
+          </div>
+          <div class="founder-badge">
+            <span class="founder-badge-label">Founded by a Student, Built for Students</span>
+          </div>
+        </div>
+
+        <!-- Founder Story -->
+        <div class="founder-content">
+          <p class="section-tagline">The Mind Behind Deskora</p>
+          <h2 id="founder-heading" class="section-title">Meet the Founder</h2>
+          <div class="founder-intro-card">
+            <div class="founder-name-block">
+              <h3 class="founder-name">Tanishk Ghadiya</h3>
+              <p class="founder-title">Founder &amp; Curator, Deskora</p>
+              <p class="founder-credentials">2nd Year PGDM Student &mdash; FOSTIIMA Business School, New Delhi</p>
+            </div>
+          </div>
+          <p class="founder-para">
+            Deskora was born out of a very real, very personal frustration. As a PGDM student navigating long study sessions, back-to-back lectures, and endless case studies at FOSTIIMA Business School, I found myself constantly battling a cluttered, uncomfortable desk.
+          </p>
+          <p class="founder-para">
+            My laptop sat flat on the table, forcing me to hunch forward for hours. Cables snaked across my study surface. Stationery was always missing when I needed it. I looked for solutions online — but most products were either overpriced imports, cheap plastic junk, or completely irrelevant to the Indian student context.
+          </p>
+          <p class="founder-para">
+            That gap is exactly what Deskora fills. I curated a focused range of workspace essentials — ergonomic stands, quality desk mats, wooden organisers — that are genuinely built for people like us: students, young professionals, and remote workers in India who deserve a smarter, calmer desk without spending a fortune.
+          </p>
+          <blockquote class="founder-quote">
+            &ldquo;A well-organised desk is not a luxury &mdash; it is the foundation of focused thinking. Deskora exists to make that accessible for every student and professional in India.&rdquo;
+            <cite>&mdash; Tanishk Ghadiya</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PROBLEMS WE SOLVE
+         ========================================================= -->
+    <section class="problems-section" aria-labelledby="problems-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tagline">Why Deskora Exists</p>
+          <h2 id="problems-heading" class="section-title">The Real Problems We Solve</h2>
+          <p class="section-description">
+            Every product in the Deskora range was chosen to fix a specific pain point that students and professionals face every single day at their desks.
+          </p>
+        </div>
+
+        <div class="problems-grid">
+
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                <path d="M12 8v4l3 3"/>
+              </svg>
+            </div>
+            <h3 class="problem-title">Neck &amp; Posture Fatigue from Flat Laptops</h3>
+            <p class="problem-text">
+              Staring down at a flat laptop for 6–10 hours a day causes chronic neck strain and poor spinal posture. Deskora's aluminium laptop risers and foldable stands elevate screens to eye level, reducing fatigue instantly.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3 class="problem-title">Cluttered, Disorganised Desks</h3>
+            <p class="problem-text">
+              Scattered pens, charging cables, sticky notes, and stationery create constant visual and mental clutter. Our wooden desk organisers and modular trays give every item a dedicated, tidy home — instantly.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                <polyline points="13,2 13,9 20,9"/>
+              </svg>
+            </div>
+            <h3 class="problem-title">Scratched &amp; Unprotected Desk Surfaces</h3>
+            <p class="problem-text">
+              Sliding laptops, rough-bottomed mugs, and sharp stationery scratch and stain table surfaces over time. Deskora's premium desk mats and vegan leather blotters protect your desk while creating a smooth, friction-free work zone.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                <line x1="6" y1="1" x2="6" y2="4"/>
+                <line x1="10" y1="1" x2="10" y2="4"/>
+                <line x1="14" y1="1" x2="14" y2="4"/>
+              </svg>
+            </div>
+            <h3 class="problem-title">Cable Chaos &amp; Tangled Wires</h3>
+            <p class="problem-text">
+              Tangled charging cables, earphone wires, and USB leads are a constant frustration. Deskora's magnetic silicone cable clips and cable organiser sleeves keep every wire routed, labelled, and tangle-free — in seconds.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="problem-title">No Stable Phone or Tablet Stand</h3>
+            <p class="problem-text">
+              Propping your phone against a book to attend a Zoom call or watch a lecture is frustrating and unstable. Deskora's wooden mobile stands and adjustable phone holders provide a stable, angle-perfect cradle for every device.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3 class="problem-title">Overpriced or Low-Quality Indian Market Options</h3>
+            <p class="problem-text">
+              Most desk accessories available in India are either cheap, flimsy products that break within weeks, or expensive imported brands. Deskora bridges this gap — premium materials and design at honest, student-friendly Indian prices.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner" aria-labelledby="cta-about-heading">
+      <div class="container cta-inner">
+        <h2 id="cta-about-heading" class="cta-title">Upgrade Your Workspace Today</h2>
+        <p class="cta-text">
+          Explore our range of desk organisers, adjustable laptop stands, and protective desk blotters built for focused study and work.
+        </p>
+        <div class="cta-actions">
+          <a href="shop.html" class="btn btn-primary">Explore All Products</a>
+          <a href="contact.html" class="btn btn-secondary">Contact Customer Care</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. REUSABLE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      
+      <!-- Brand & Mission Column -->
+      <div class="footer-col footer-brand-col">
+        <a href="index.html" class="footer-brand-logo">
+          <img src="assets/logo.jpg" alt="Deskora — Workspace Essentials" class="footer-brand-logo-img" width="80" height="80" />
+        </a>
+        <p class="footer-tagline">
+          Upgrade your workspace with thoughtful desk organisers, ergonomic stands, and protective mats.
+        </p>
+        <p class="footer-note">
+          Fulfillment operations serving customers across India.
+        </p>
+      </div>
+
+      <!-- Categories Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Product Categories</h4>
+        <ul class="footer-links">
+          <li><a href="desk-organisers.html">Desk Organisers</a></li>
+          <li><a href="laptop-and-mobile-stands.html">Laptop &amp; Mobile Stands</a></li>
+          <li><a href="desk-mats-and-mousepads.html">Desk Mats &amp; Mousepads</a></li>
+          <li><a href="shop.html">All Products &amp; Setup Kits</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Care Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Customer Information</h4>
+        <ul class="footer-links">
+          <li><a href="about-us.html">About Our Brand</a></li>
+          <li><a href="contact.html">Contact &amp; Support</a></li>
+          <li><a href="shipping-delivery.html">Shipping &amp; Delivery Details</a></li>
+          <li><a href="replacement-policy.html">7-Day Replacement Policy</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Column -->
+      <div class="footer-col footer-newsletter-col">
+        <h4 class="footer-heading">Workspace Newsletter</h4>
+        <p class="footer-newsletter-text">
+          Receive occasional workspace organisation guides and genuine product updates.
+        </p>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <div class="form-group">
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletter-email" name="email" required placeholder="Enter your email" autocomplete="email" />
+              <button type="submit" class="btn btn-primary newsletter-submit-btn" id="newsletter-submit-btn">Subscribe</button>
+            </div>
+            <span class="form-error-message" id="newsletter-error" aria-live="polite"></span>
+          </div>
+          <div class="form-feedback" id="newsletter-feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Deskora Retail India. All rights reserved.</p>
+        <p class="footer-disclaimer">Prices listed in Indian Rupees (₹). Secure checkout and genuine product fulfillment.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       4. EXTERNAL JAVASCRIPT
+       ========================================================================= -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
