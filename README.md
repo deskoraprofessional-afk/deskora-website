@@ -98,3 +98,4 @@ Deskora/
 - **Tailwind CSS (CDN)**: Modern utility-first styling with custom palette.
 - **Lucide Icons (CDN)**: Crisp, lightweight icons.
 - **Google Fonts**: Plus Jakarta Sans (Headings) & Inter (Body).
+- 
