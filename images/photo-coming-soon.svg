@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="525" viewBox="0 0 700 525" role="img" aria-label="Photo coming soon">
+  <rect width="700" height="525" fill="#F7F5F0"/>
+  <rect x="24" y="24" width="652" height="477" rx="8" fill="none" stroke="#E5E1D8" stroke-width="2" stroke-dasharray="6 6"/>
+  <g transform="translate(350, 220)" text-anchor="middle">
+    <!-- Camera / Frame Icon in Deep Forest Green -->
+    <g fill="none" stroke="#24443B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(-28, -50)">
+      <rect x="4" y="8" width="48" height="38" rx="6"/>
+      <circle cx="28" cy="27" r="10"/>
+      <path d="M18 8V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3"/>
+      <circle cx="42" cy="16" r="1.5" fill="#24443B"/>
+    </g>
+    <!-- Text: Photo coming soon in Deep Forest Green -->
+    <text y="40" font-family="'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#24443B" letter-spacing="-0.01em">
+      Photo coming soon
+    </text>
+    <!-- Brand Subtitle in Warm Terracotta -->
+    <text y="68" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#D98A5B" letter-spacing="0.1em">
+      DESKORA WORKSPACE ESSENTIALS
+    </text>
+  </g>
+</svg>
