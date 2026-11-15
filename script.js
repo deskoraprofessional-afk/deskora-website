@@ -382,6 +382,8 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         `;
 
+        if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form_name: 'order_request' }); }
+
         const continueBtn = cartItemsContainer.querySelector('#checkout-continue-btn');
         if (continueBtn) {
           continueBtn.addEventListener('click', function () {
@@ -557,6 +559,7 @@ document.addEventListener('DOMContentLoaded', function () {
             contactFormFeedback.className = 'form-feedback info';
             contactFormFeedback.textContent = `Thank you, ${nameVal}. Your enquiry has been received. Our team will contact you at ${emailVal}.`;
             contactForm.reset();
+            if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form_name: 'contact' }); }
           } else {
             contactFormFeedback.className = 'form-feedback error';
             contactFormFeedback.textContent = 'Unable to deliver message through backend service. Please email deskoraprofessional@gmail.com directly.';
@@ -637,6 +640,7 @@ document.addEventListener('DOMContentLoaded', function () {
             newsletterFeedback.textContent = `Thank you! ${emailVal} has been subscribed to Deskora workspace updates.`;
           }
           newsletterForm.reset();
+          if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form_name: 'newsletter' }); }
         } else {
           return response.json().then(function (data) {
             let errorMsg = 'Failed to record subscription. Please try again later.';
@@ -911,6 +915,7 @@ document.addEventListener('DOMContentLoaded', function () {
               formFeedback.innerHTML = '<strong>Enquiry received!</strong> Thank you, ' + escapeHtml(nameVal) + '. We\u2019ll reply to <strong>' + escapeHtml(emailVal) + '</strong> within 24 operational hours.';
             }
             enquiryForm.reset();
+            if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form_name: 'contact' }); }
           } else {
             return response.json().then(function (data) {
               var errDetail = 'Unable to deliver your message.';
