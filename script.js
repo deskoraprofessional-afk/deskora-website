@@ -574,7 +574,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --------------------------------------------------------------------------
-  // 5. NEWSLETTER SIGNUP FORM VALIDATION
+  // 5. NEWSLETTER SIGNUP FORM (Formspree Integration)
   // --------------------------------------------------------------------------
   const newsletterForm = document.getElementById('newsletter-form');
   const newsletterFeedback = document.getElementById('newsletter-feedback');
@@ -585,18 +585,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const emailInput = document.getElementById('newsletter-email');
       const emailError = document.getElementById('newsletter-error');
+      const submitBtn = document.getElementById('newsletter-submit-btn');
       const emailVal = emailInput ? emailInput.value.trim() : '';
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+      // Validate email format
       if (!emailVal || !emailPattern.test(emailVal)) {
         if (emailInput) {
           emailInput.classList.add('form-input-error');
           emailInput.setAttribute('aria-invalid', 'true');
+          emailInput.focus();
         }
         if (emailError) emailError.textContent = 'Please enter a valid email address.';
         if (newsletterFeedback) {
           newsletterFeedback.className = 'form-feedback error';
-          newsletterFeedback.textContent = 'Invalid email address.';
+          newsletterFeedback.textContent = 'Please enter a valid email address.';
         }
         return;
       }
@@ -607,34 +610,63 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       if (emailError) emailError.textContent = '';
 
-      const endpoint = newsletterForm.getAttribute('action');
+      const endpoint = newsletterForm.getAttribute('action') || 'https://formspree.io/f/mrpqzarp';
 
-      if (endpoint && endpoint !== '#' && endpoint.trim() !== '') {
-        newsletterFeedback.className = 'form-feedback info';
-        newsletterFeedback.textContent = 'Submitting email...';
-
-        fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ email: emailVal })
-        }).then(function (response) {
-          if (response.ok) {
-            newsletterFeedback.className = 'form-feedback info';
-            newsletterFeedback.textContent = `Thank you! ${emailVal} has been subscribed to Deskora updates.`;
-            newsletterForm.reset();
-          } else {
-            newsletterFeedback.className = 'form-feedback error';
-            newsletterFeedback.textContent = 'Failed to record subscription. Please try again later.';
-          }
-        }).catch(function () {
-          newsletterFeedback.className = 'form-feedback error';
-          newsletterFeedback.textContent = 'Network error connecting to subscription service.';
-        });
-      } else {
-        // Honest transparent feedback when backend is not yet attached
-        newsletterFeedback.className = 'form-feedback info';
-        newsletterFeedback.innerHTML = `<strong>Email Validated:</strong> <code>${emailVal}</code> is formatted correctly.<br><small style="display:block; margin-top:4px;">Notice: A newsletter marketing service (e.g., Mailchimp, SendGrid) is required to process subscriptions.</small>`;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Subscribing...';
       }
+
+      if (newsletterFeedback) {
+        newsletterFeedback.className = 'form-feedback info';
+        newsletterFeedback.textContent = 'Submitting your subscription...';
+      }
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email: emailVal })
+      })
+      .then(function (response) {
+        if (response.ok) {
+          if (newsletterFeedback) {
+            newsletterFeedback.className = 'form-feedback success';
+            newsletterFeedback.textContent = `Thank you! ${emailVal} has been subscribed to Deskora workspace updates.`;
+          }
+          newsletterForm.reset();
+        } else {
+          return response.json().then(function (data) {
+            let errorMsg = 'Failed to record subscription. Please try again later.';
+            if (data && data.errors && data.errors.length > 0) {
+              errorMsg = data.errors.map(function (err) { return err.message; }).join(' ');
+            }
+            if (newsletterFeedback) {
+              newsletterFeedback.className = 'form-feedback error';
+              newsletterFeedback.textContent = errorMsg;
+            }
+          }).catch(function () {
+            if (newsletterFeedback) {
+              newsletterFeedback.className = 'form-feedback error';
+              newsletterFeedback.textContent = 'Subscription request was not accepted by the service. Please try again later.';
+            }
+          });
+        }
+      })
+      .catch(function () {
+        if (newsletterFeedback) {
+          newsletterFeedback.className = 'form-feedback error';
+          newsletterFeedback.textContent = 'Network error connecting to subscription service. Please check your internet connection.';
+        }
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Subscribe';
+        }
+      });
     });
   }
 
@@ -1530,7 +1562,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 700);
   }
 
-  // Initialize Welcome Popup
-  initWelcomePopup();
+  // Initialize Welcome Popup — DISABLED
+  // initWelcomePopup();
+
+  // --------------------------------------------------------------------------
+  // 11. FAQ ACCORDION
+  // --------------------------------------------------------------------------
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('is-open');
+
+      // Close all other items
+      document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        openItem.querySelector('.faq-answer').hidden = true;
+      });
+
+      // Toggle current item
+      if (!isOpen) {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+      }
+    });
+  });
 
 });
